@@ -1,0 +1,74 @@
+#usda 1.0
+(
+    defaultPrim = "TrashGameRoot"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "TrashGameRoot"
+{
+    reorder nameChildren = ["GridMaterial", "TrashBin", "TrashGameRoot", "RecyclingBin_1", "TrashItem", "PlasticRecyclable", "RustyMetalTrash", "BatteryTrash"]
+    float3 xformOp:translate = (-0.029470861, -0.034287456, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def "GridMaterial" (
+        active = true
+        references = @Materials/GridMaterial.usda@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "PlasticRecyclable" (
+        active = true
+        prepend references = @PlasticRecyclable.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (1.467253, 0.28473127, 1.5810436)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "RustyMetalTrash" (
+        active = true
+        prepend references = @RustyMetalTrash.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (1.2121334, 0.09782843, 1.6176175)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "BatteryTrash" (
+        active = true
+        prepend references = @BatteryTrash.usdz@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.0005423011, 0.0005423011, 0.0005423011)
+        float3 xformOp:translate = (1.0059495, 0.048883263, 1.6218626)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "RecyclingBin" (
+        active = true
+        prepend references = @RecyclingBin.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (0.70457834, 0.034287456, -0.21105409)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "TrashBin" (
+        active = true
+        prepend references = @TrashBin.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (2.2602115, 0.034287456, -1.4593272)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+
